@@ -6,3 +6,22 @@
 //  - HH:MM::SS (Eg. 13:45:23)
 
 //  - HH:MM::SS AM/PM (Eg 01:45:23 PM)
+
+
+const updateClock = () => {
+    const date = new Date();
+    const H = date.getHours();
+    const M = date.getMinutes();
+    const S = date.getSeconds();
+
+    // Optionally add leading zeros
+    const hh = String(H).padStart(2, '0');
+    const mm = String(M).padStart(2, '0');
+    const ss = String(S).padStart(2, '0');
+
+    const ampm = H >= 12 ? 'PM' : 'AM';
+    console.clear();
+    console.log(`${hh}:${mm}:${ss} ${ampm}`);
+};
+
+setInterval(updateClock, 1000);
