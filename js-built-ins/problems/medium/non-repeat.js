@@ -22,5 +22,31 @@
 */
 function nonrepeat(str) {
   // Your code here
+  //   for (let char of str) {
+  //     console.log(str.indexOf(char), str.lastIndexOf(char));
+
+  //     if (str.indexOf(char) === str.lastIndexOf(char)) {
+  //       return char;
+  //     }
+  //   }
+  //   return null;
+
+  // Your code here
+  let arr = str.split("");
+  let arr2 = [];
+  for (const ch of arr) {
+    let count = 0;
+    for (const ch1 of arr) {
+      if (ch === ch1) {
+        count++;
+      }
+    }
+    if (count == 1) {
+      arr2.push(ch);
+      break;
+    }
+  }
+  if (arr2.length === 0) return null;
+  return arr2.join("");
 }
 module.exports = nonrepeat;

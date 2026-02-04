@@ -23,6 +23,12 @@
 
 function reverseInteger(num) {
   // Your code here
+  let revNum = 0;
+  while (num !== 0) {
+    revNum = (num % 10) + revNum * 10;
+    num = Math.trunc(num / 10); // for remove fractional digits.
+  }
+  return revNum;
 }
 
 module.exports = reverseInteger;
