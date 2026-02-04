@@ -3,10 +3,19 @@
   Example:
   - Input: [3, 7, 2, 9, 1]
   - Output: 9
+
+  Once you've implemented the logic, test your code by running
+  - `npm run test-largest-element`
 */
 
 function findLargestElement(numbers) {
-
+  let max = numbers[0];
+  for (let i = 0; i < numbers.length; i++) {
+    if (max < numbers[i]) {
+      max = numbers[i];
+    }
+  }
+  return max;
 }
 
 module.exports = findLargestElement;
