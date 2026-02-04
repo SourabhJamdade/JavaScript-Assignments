@@ -7,7 +7,16 @@
 */
 
 function isPalindrome(str) {
-    return true;
+  let str1 = str.toLowerCase().split("");
+  let str2 = str1
+    .filter((ele) => (ele >= "a" && ele <= "z") || (ele >= "0" && ele <= "9"))
+    .join("");
+  let str3 = "";
+
+  for (let i = str2.length - 1; i >= 0; i--) {
+    str3 += str2[i];
+  }
+  return str2 == str3;
 }
 
 module.exports = isPalindrome;
